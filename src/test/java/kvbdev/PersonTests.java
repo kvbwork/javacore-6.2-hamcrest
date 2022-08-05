@@ -3,7 +3,8 @@ package kvbdev;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.isA;
 
 public class PersonTests {
 
@@ -36,11 +37,11 @@ public class PersonTests {
         Person person = new Person(name, family, age, sex, edu);
 
         // then:
-        assertThat(person.getName(), is(name));
-        assertThat(person.getFamily(), is(family));
-        assertThat(person.getAge(), is(age));
-        assertThat(person.getSex(), is(sex));
-        assertThat(person.getEducation(), is(edu));
+        assertThat("name", person.getName(), is(name));
+        assertThat("family", person.getFamily(), is(family));
+        assertThat("age", person.getAge(), is(age));
+        assertThat("sex", person.getSex(), is(sex));
+        assertThat("education", person.getEducation(), is(edu));
     }
 
 }
